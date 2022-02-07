@@ -82,6 +82,10 @@ func (r *Cluster) Default() {
 
 	if r.Spec.CloudStorage.Enabled && r.Spec.CloudStorage.CacheStorage != nil && r.Spec.CloudStorage.CacheStorage.Capacity.Value() == 0 {
 		r.Spec.CloudStorage.CacheStorage.Capacity = resource.MustParse("20G")
+
+		if r.Spec.CloudStorage.CacheStorage.SubPath == "" {
+			r.Spec.CloudStorage.CacheStorage.SubPath = "."
+		}
 	}
 
 	r.setDefaultAdditionalConfiguration()

@@ -506,6 +506,7 @@ func setCloudStorage(
 			volMount := corev1.VolumeMount{
 				Name:      datadirName,
 				MountPath: dataDirectory,
+				SubPath:   cluster.Spec.CloudStorage.CacheStorage.SubPath,
 			}
 			containers[i].VolumeMounts = append(containers[i].VolumeMounts, volMount)
 		}

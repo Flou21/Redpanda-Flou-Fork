@@ -168,6 +168,8 @@ type StorageSpec struct {
 	Capacity resource.Quantity `json:"capacity,omitempty"`
 	// Storage class name - https://kubernetes.io/docs/concepts/storage/storage-classes/
 	StorageClassName string `json:"storageClassName,omitempty"`
+	// SubPath https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath
+	SubPath string `json:"subPath,omitempty"`
 }
 
 // ExternalConnectivityConfig adds listener that can be reached outside
